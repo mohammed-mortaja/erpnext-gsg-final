@@ -14,7 +14,9 @@ app_license = "MIT"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/erpnext_gsg/css/erpnext_gsg.css"
+
 # app_include_js = "/assets/erpnext_gsg/js/erpnext_gsg.js"
+
 
 # include js, css files in header of web template
 # web_include_css = "/assets/erpnext_gsg/css/erpnext_gsg.css"
@@ -35,6 +37,13 @@ app_license = "MIT"
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
+
+doctype_js = {
+	"Journal Entry": "public/js/journal_entry.js",
+	"Payment Entry": "public/js/payment_entry.js",
+	# "Material Request": "public/js/material_request",
+}
+
 
 # Home Pages
 # ----------
@@ -95,13 +104,15 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+
+
+doc_events = {
+
+    "Material Request": {
+        "on_submit": "erpnext_gsg.erpnext_gsg.doc_events.material_request_custom.create_stock_entry",
+    },
+}
+
 
 # Scheduled Tasks
 # ---------------
