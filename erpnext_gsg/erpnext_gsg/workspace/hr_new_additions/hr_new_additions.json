@@ -1,0 +1,44 @@
+{
+ "category": "Modules",
+ "charts": [],
+ "creation": "2023-03-07 20:49:59.476054",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "HR New additions",
+ "links": [],
+ "modified": "2023-03-07 20:58:46.993775",
+ "modified_by": "Administrator",
+ "module": "erpnext_gsg",
+ "name": "HR New additions",
+ "onboarding": "Human Resource",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 0,
+ "shortcuts": [
+  {
+   "doc_view": "List",
+   "label": "Employee Excuse",
+   "link_to": "Employee Excuse",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "To Whom It Concerns",
+   "link_to": "To Whom It Concerns",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Attendance Working Hours",
+   "link_to": "Attendance Working Hours",
+   "type": "Report"
+  }
+ ]
+}
