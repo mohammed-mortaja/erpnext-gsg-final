@@ -1,5 +1,5 @@
 import datetime
-from frappe.utils import time_diff_in_hours, get_url
+from frappe.utils import time_diff_in_hours
 import frappe
 
 def calculate_working_hours(check_in, check_out):
@@ -20,7 +20,9 @@ def execute(filters=None):
         {'fieldname': 'check_in', 'label': 'Check In', 'fieldtype': 'Time'},
         {'fieldname': 'check_out', 'label': 'Check Out', 'fieldtype': 'Time'},
         {'fieldname': 'working_hours', 'label': 'Working Hours', 'fieldtype': 'Float'},
-		{'fieldname': 'view_attendance', 'label': 'View Attendance', 'fieldtype': 'Link','options': 'Attendance'}
+        { 'fieldname': 'view_attendance','label': 'View Attendance','fieldtype': 'Link',
+          'options': 'Attendance','target': '_blank'
+        }
     ]
 
     # Get the filter values
@@ -47,7 +49,7 @@ def execute(filters=None):
 
     # Process the results and build the report data
     for result in results:
-        attendance_form_url = get_url('/desk#Form/Attendance/{0}'.format(result.name))
+        attendance_form_url = 'http://0.0.0.0:8000/app/attendance/{0}'.format(result.name)
         working_hours = calculate_working_hours(result.check_in, result.check_out)
         data.append([
             result.attendance_date,
@@ -56,7 +58,7 @@ def execute(filters=None):
             result.check_in,
             result.check_out,
             working_hours,
-			'<a href="{0}" target="_blank">View Attendance</a>'.format(attendance_form_url)
+            '<a href="#" target="_blank" onclick="window.open(\'{0}\')">View Attendance</a>'.format(attendance_form_url)
         ])
 
     return columns, data
