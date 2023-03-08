@@ -1,0 +1,225 @@
+
+:root {
+    --section-main: #28293E;
+    --section-secondary: #FDF0E9;
+    --main-color: #EF6D58;
+    --texts: #391400;
+    --started-sm:#F9E5DA;
+}
+
+/*START GLOBAL RESET */
+.section-main {
+    background-color: var(--section-main) !important;
+}
+
+.section-secondary {
+    background-color: var(--section-secondary) !important;
+}
+
+.main-color {
+    color: var(--main-color) !important;
+}
+
+.texts {
+    color: var(--texts);
+}
+.text-let{
+    font-size: 16px !important;
+    letter-spacing: 3px !important;
+}
+.btn {
+    border: none !important;
+    border: solid 1px var(--main-color) !important;
+    font-size: 14px !important;
+    border-radius: 2px !important;
+    transition: .6s !important;
+    border: solid 1px transparent !important;
+}
+.btn:hover {
+    opacity: .9;
+
+}
+
+.btn-empty-bgc {
+    border: none !important;
+    border: solid 1px var(--main-color) !important;
+    font-size: 14px !important;
+    border-radius: 2px !important;
+    transition: .6s !important;
+    border: solid 1px white !important;
+}
+.btn-empty-bgc:hover {
+    border: solid 1px gold !important;
+}
+.main-btn{
+    background-color: var(--main-color) !important;
+    color: #fff !important;
+    font-size: 14px !important;
+    border: none !important;
+}
+.intro-text{
+    font-size: 36px;
+}
+.icon{
+    width: fit-content;
+    background-color:var(--main-color) !important;
+}
+@media (max-width: 576px){
+    .col-sm-12  {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+    }
+    
+    .services .qus span{
+        font-size: 14px;
+    
+    }
+  
+    }
+    
+    @media (max-width: 768px){
+    .col-md-5 {
+        flex: 0 0 auto !important;
+        width: 41.66666667% !important;
+    }
+    
+    .col-sm-8 {
+        flex: 0 0 auto !important;
+        width: 66.66666667% !important;
+    }}
+/*END GLOBAL RESET */
+
+/* start main */
+main {
+    height: calc(100vh - 62px);
+}
+main .main-title span{
+    font-size: 16px !important;
+    letter-spacing: 2px;
+}
+
+
+@media (max-width:991px){
+    main {
+        height: fit-content;
+        padding: 60px 5px;
+    }
+    main .img-box {
+        width: 100%;
+        margin: auto;
+    }
+ 
+    main .main-title h1{
+        font-size: 30px;
+    }
+  
+ 
+}
+/* start main */
+/* start servecis */
+.services .card {
+    background-color: inherit !important;
+}
+.services .card .learn {
+    cursor: pointer;
+}
+
+/* end servecis */
+/* start work */
+.work .row .col img{
+    overflow: hidden;
+    transition: .6s;
+    
+   }
+   .work .row .col:hover img{
+   transform: scale(105%) rotate(1deg);
+   
+  }
+/* end work */
+/* start testimonials */
+.testimonials .star{
+    top: -5%;
+    left: 5%;
+}
+.testimonials img{
+   width: 60%;
+}
+.testimonials .fa-gift{
+    bottom: 50%;
+    left: 30%;
+    transform: translate(-50% ,50%);
+}
+@media (max-width:991px){
+    .testimonials .star{
+        top: -2%;
+        left: 5%;
+    }
+    .testimonials .started{
+        background-color: var(--started-sm);
+    }
+}
+.testimonials .rate-star i{
+    color: yellow;
+}
+/* end testimonials */
+/* start contact */
+
+  
+textarea {
+    max-width: 100%;
+  }
+.contact input[type="text"]{
+    width: 100%;
+}
+
+/* end contact */
+/* start help */
+.galary{
+    overflow: hidden;
+}
+.galary img{
+    width:216px;
+    transition: .8s ;
+  }
+  .galary img:hover{
+    transform: scale(120%) ;
+
+  }
+ 
+/* end help */
+/* start blog */
+.blog .row .col img{
+    overflow: hidden;
+    transition: .6s;
+    
+   }
+   .blog .col:hover img{
+   transform: scale(105%) rotate(1deg);
+   
+  }
+/* end blog */
+.accordion-button:not(.collapsed)::after {
+    background-image: var(--bs-accordion-btn-active-icon);
+    transform: var(--bs-accordion-btn-icon-transform);
+    background-color: #EF6D58;
+    display: none;
+}
+.accordion-button::after {
+    flex-shrink: 0;
+    width: var(--bs-accordion-btn-icon-width);
+    height: var(--bs-accordion-btn-icon-width);
+    margin-left: auto;
+    content: "";
+    background-image: var(--bs-accordion-btn-icon);
+    background-repeat: no-repeat;
+    background-size: var(--bs-accordion-btn-icon-width);
+    transition: var(--bs-accordion-btn-icon-transition);
+    background-color: #EF6D58;
+    padding: 12px;
+    display: none;
+    
+}
+
+.accordion-button:not(.collapsed) .up {
+  transform: rotate(542deg) !important;
+}

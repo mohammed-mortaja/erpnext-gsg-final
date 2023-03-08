@@ -1,0 +1,39 @@
+@import "../css/main.css";
+@import "../css/about.css";
+/* start contact */
+.location-map .sign {
+    max-width: 30% !important;
+    top: 68% !important;
+     
+    
+}
+ form select{
+    right: 48px;
+    bottom: 266px;
+    
+}
+textarea {
+    max-width: 100%;
+  }
+ input[type="text"]{
+    width: 100%;
+
+}
+@media (max-width:991px){
+    .location-map .sign  {
+        max-width: 80% !important;
+        position: static !important;
+        margin: auto;
+    }
+    .location-map .sign .card  {
+        height: 70vh;
+        
+     
+    }
+    .location-map iframe{
+        max-width: 100%;
+        position: static !important;
+    }
+ 
+}
+/* end contact */

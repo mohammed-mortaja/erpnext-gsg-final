@@ -1,0 +1,50 @@
+@import "../css/main.css";
+
+:root{
+    --secion-help:#F9E5DA;
+}
+/* global */
+p , blockquote{
+    max-width: 490px;
+}
+blockquote{
+    font-size: 32px;
+}
+/* global */
+/* start main */
+main{
+    height: 50vh;
+}
+
+/* end main */
+/* start help */
+.help .star{
+    top: -12%;
+    left: 5%;
+}
+.help img{
+   width: 60%;
+}
+.help .fa-gift{
+    bottom: 50%;
+    left: 30%;
+    transform: translate(-50% ,50%);
+}
+@media (max-width:991px){
+    .help .star{
+        top: -5%;
+        left: 5%;
+    }
+    .help .started{
+        background-color: var(--started-sm);
+    }
+}
+.help{
+    background-color: var(--secion-help);
+}
+/* end help */
+.box{
+    max-width: 50%  !important;
+}
+
+

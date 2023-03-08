@@ -1,0 +1,14 @@
+@import "../css/main.css";
+@import "../css/about.css";
+.agency .main-title > div{
+    max-width: 440px;
+}.num .par{
+    max-width: 350px;
+}
+.project i{
+    font-size: 2rem;
+    background-color: transparent !important;
+}
+.person{
+    background-color: #EF6D58 !important;
+}

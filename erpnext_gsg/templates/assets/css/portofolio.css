@@ -1,0 +1,9 @@
+@import "../css/main.css";
+@import "../css/about.css";
+@import "../css/services.css";
+.list .active , .list li:hover{
+    background-color: #EF6D58 !important;
+    min-width: fit-content;
+    color: white !important;
+    border-radius: 60px !important;
+}
