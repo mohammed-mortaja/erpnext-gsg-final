@@ -25,13 +25,11 @@ def execute(filters=None):
         }
     ]
 
-    # Get the filter values
     from_date = filters.get('from_date')
     to_date = filters.get('to_date')
     employee = filters.get('employee')
     department = filters.get('department')
 
-    # Build the SQL query
     query = """
         SELECT `name`, `attendance_date`, `employee`, `employee_name`, `check_in`, `check_out`
         FROM `tabAttendance`
@@ -44,10 +42,8 @@ def execute(filters=None):
         query += " AND `department` = %s"
         params.append(department)
 
-    # Execute the query and retrieve the results
     results = frappe.db.sql(query, tuple(params), as_dict=True)
 
-    # Process the results and build the report data
     for result in results:
         attendance_form_url = 'http://0.0.0.0:8000/app/attendance/{0}'.format(result.name)
         working_hours = calculate_working_hours(result.check_in, result.check_out)

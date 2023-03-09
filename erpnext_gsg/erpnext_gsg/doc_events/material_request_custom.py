@@ -1,17 +1,17 @@
+
 import frappe
 
-
-@frappe.whitelist()
 def create_stock_entry(doc, method):
-    if doc.material_request_type == 'Material Transfer':
-        new_doc = frappe.new_doc('Stock Entry')
-        new_doc.stock_entry_type = 'Material Issue'
-        new_doc.from_warehouse = doc.set_from_warehouse
-        new_doc.to_warehouse = doc.set_warehouse
-        for item in doc.items:
-            new_doc.append("items",
-                           {'item_code': item.item_code, 'qty': item.qty, 's_warehouse': doc.set_from_warehouse,
-                            't_warehouse': item.warehouse})
+    if doc.material_request_type == "Material Issue":
+        new_stock_entry = frappe.new_doc("Stock Entry")
+        new_stock_entry.stock_entry_type = doc.material_request_type
+        new_stock_entry.from_warehouse = doc.set_warehouse
+        new_stock_entry.to_warehouse = doc.set_from_warehouse
 
-        new_doc.insert(ignore_permissions=1)
-        new_doc.submit()
+        for item in doc.items:
+            new_stock_entry.append("items", {"item_code": item.item_code,
+                                             "qty": item.qty,
+                                             })
+
+        new_stock_entry.insert()
+        new_stock_entry.submit()

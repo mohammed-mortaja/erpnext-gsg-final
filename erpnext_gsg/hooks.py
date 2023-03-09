@@ -41,8 +41,7 @@ app_license = "MIT"
 doctype_js = {
 	"Journal Entry": "public/js/journal_entry.js",
 	"Payment Entry": "public/js/payment_entry.js",
-	# "Material Request": "public/js/material_request",
-}
+	}
 
 
 # Home Pages
@@ -107,10 +106,9 @@ doctype_js = {
 
 
 doc_events = {
-
-    "Material Request": {
-        "on_submit": "erpnext_gsg.erpnext_gsg.doc_events.material_request_custom.create_stock_entry",
-    },
+"Material Request": {
+		"on_submit": "erpnext_gsg.erpnext_gsg.doc_events.material_request_custom.create_stock_entry"
+	},
 }
 
 
