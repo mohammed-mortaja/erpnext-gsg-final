@@ -1,4 +1,3 @@
-
 import frappe
 
 def create_stock_entry(doc, method):
@@ -11,6 +10,8 @@ def create_stock_entry(doc, method):
         for item in doc.items:
             new_stock_entry.append("items", {"item_code": item.item_code,
                                              "qty": item.qty,
+                                             "warehouse": doc.set_from_warehouse,
+                                             # "material_request": item.name
                                              })
 
         new_stock_entry.insert()
