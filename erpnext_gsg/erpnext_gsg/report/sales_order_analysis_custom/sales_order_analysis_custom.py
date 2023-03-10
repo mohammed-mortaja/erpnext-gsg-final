@@ -61,6 +61,8 @@ def get_data(conditions, filters):
 	data = frappe.db.sql(
 		"""
 		SELECT
+		
+            so.sales_order_time as sales_order_time,
 			so.transaction_date as date,
 			soi.delivery_date as delivery_date,
 			so.name as sales_order,
@@ -213,6 +215,12 @@ def prepare_chart_data(pending, completed):
 
 def get_columns(filters):
 	columns = [
+		{
+			"label": _("Sales order time"),
+			"fieldname": "sales_order_time",
+			"fieldtype": "Time",
+			"width": 90,
+		},
 		{"label": _("Date"), "fieldname": "date", "fieldtype": "Date", "width": 90},
 		{
 			"label": _("Sales Order"),
